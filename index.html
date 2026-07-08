@@ -453,6 +453,100 @@
             color: var(--text-main);
         }
 
+        /* --- NUEVA SECCIÓN FOOTER (PIE DE PÁGINA) --- */
+        footer {
+            background-color: #f6f4f0;
+            padding: 60px 10% 80px; 
+            text-align: center;
+            border-top: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 30px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-size: 1.05rem;
+            font-weight: 400;
+            transition: opacity 0.3s;
+            letter-spacing: 0.5px;
+        }
+
+        .footer-links a:hover {
+            opacity: 0.6;
+        }
+
+        .footer-contact {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: var(--text-main);
+            font-size: 1rem;
+        }
+
+        .contact-item svg {
+            width: 22px;
+            height: 22px;
+            fill: none;
+            stroke: currentColor;
+            stroke-width: 1.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        /* Diseño de Tarjetas de Pago (Puro CSS) */
+        .payment-methods {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .pay-card {
+            background-color: #ffffff;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 8px 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 35px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            user-select: none;
+        }
+
+        .pay-visa { color: #1434CB; font-style: italic; font-size: 1rem; }
+        .pay-master { color: #EB001B; font-weight: 600; }
+        .pay-amex { color: #002663; font-weight: 600; font-size: 0.75rem;}
+        .pay-cabal { color: #005F9E; letter-spacing: 1px; }
+        .pay-mp { color: #009EE3; }
+        .pay-pf { color: #F0B000; font-weight: 800; font-style: italic;}
+        .pay-rp { background-color: #004D95; color: white; border: none; font-style: italic;}
+
         /* --- BOTÓN FLOTANTE --- */
         .whatsapp-float {
             position: fixed;
@@ -512,6 +606,7 @@
             .modal-img-wrapper { height: 200px; }
             .whatsapp-float { bottom: 20px; right: 20px; padding: 12px; }
             .whatsapp-float span { display: none; }
+            footer { padding: 50px 5% 80px; }
         }
     </style>
 
@@ -634,6 +729,54 @@
 
         </div>
     </section>
+
+    <!-- FOOTER (PIE DE PÁGINA) -->
+    <footer>
+        <div class="footer-content">
+            
+            <!-- Links de navegación -->
+            <div class="footer-links">
+                <a href="#">Inicio</a>
+                <a href="#productos">Nuestros Productos</a>
+                <a href="#">Envíos a todo el país</a>
+            </div>
+
+            <!-- Datos de Contacto con Íconos -->
+            <div class="footer-contact">
+                
+                <div class="contact-item">
+                    <!-- Ícono WhatsApp/Tel -->
+                    <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                    <span>11 3566-3274</span>
+                </div>
+                
+                <div class="contact-item">
+                    <!-- Ícono Mail -->
+                    <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                    <span>alimentosquetecuidan@gmail.com</span>
+                </div>
+                
+                <div class="contact-item">
+                    <!-- Ícono Ubicación -->
+                    <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                    <span>Envíos desde Buenos Aires a todo el país</span>
+                </div>
+
+            </div>
+
+            <!-- Logos de Medios de Pago -->
+            <div class="payment-methods">
+                <div class="pay-card pay-visa">VISA</div>
+                <div class="pay-card pay-master">mastercard</div>
+                <div class="pay-card pay-amex">AMEX</div>
+                <div class="pay-card pay-cabal">CABAL</div>
+                <div class="pay-card pay-mp">mercado pago</div>
+                <div class="pay-card pay-pf">PagoFácil</div>
+                <div class="pay-card pay-rp">Rapipago</div>
+            </div>
+
+        </div>
+    </footer>
 
     <div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
         
