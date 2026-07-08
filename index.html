@@ -953,6 +953,17 @@
             containers.forEach(container => container.classList.remove('active'));
             document.body.style.overflow = 'auto';
         }
+
+        /* --- LÓGICA NUEVA: ABRIR PRODUCTO DESDE ANUNCIO DE FACEBOOK --- */
+        window.addEventListener('DOMContentLoaded', (event) => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const producto = urlParams.get('prod');
+            
+            if(producto === 'magnesio' || producto === 'curcuma' || producto === 'potasio') {
+                // Abrir el popup correspondiente al producto
+                openModal(producto);
+            }
+        });
     </script>
 
 </body>
