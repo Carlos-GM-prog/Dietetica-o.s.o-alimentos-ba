@@ -515,37 +515,45 @@
             stroke-linejoin: round;
         }
 
-        /* Diseño de Tarjetas de Pago (Puro CSS) */
-        .payment-methods {
+        /* Diseño de Tarjetas de Pago e Imágenes */
+        .footer-badges {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .badge-title {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 600;
+        }
+
+        .badge-row {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 10px;
-            margin-top: 20px;
         }
 
-        .pay-card {
+        .badge-row img {
+            height: 38px;
             background-color: #ffffff;
             border: 1px solid #e0e0e0;
-            border-radius: 4px;
-            padding: 8px 14px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 35px;
-            font-size: 0.8rem;
-            font-weight: 700;
+            border-radius: 6px;
+            padding: 5px 10px;
             box-shadow: 0 1px 3px rgba(0,0,0,0.02);
-            user-select: none;
+            object-fit: contain;
+            transition: transform 0.2s ease;
         }
 
-        .pay-visa { color: #1434CB; font-style: italic; font-size: 1rem; }
-        .pay-master { color: #EB001B; font-weight: 600; }
-        .pay-amex { color: #002663; font-weight: 600; font-size: 0.75rem;}
-        .pay-cabal { color: #005F9E; letter-spacing: 1px; }
-        .pay-mp { color: #009EE3; }
-        .pay-pf { color: #F0B000; font-weight: 800; font-style: italic;}
-        .pay-rp { background-color: #004D95; color: white; border: none; font-style: italic;}
+        .badge-row img:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
 
         /* --- BOTÓN FLOTANTE --- */
         .whatsapp-float {
@@ -764,15 +772,18 @@
 
             </div>
 
-            <!-- Logos de Medios de Pago -->
-            <div class="payment-methods">
-                <div class="pay-card pay-visa">VISA</div>
-                <div class="pay-card pay-master">mastercard</div>
-                <div class="pay-card pay-amex">AMEX</div>
-                <div class="pay-card pay-cabal">CABAL</div>
-                <div class="pay-card pay-mp">mercado pago</div>
-                <div class="pay-card pay-pf">PagoFácil</div>
-                <div class="pay-card pay-rp">Rapipago</div>
+            <!-- Logos de Medios de Pago e Imágenes de Envío -->
+            <div class="footer-badges">
+                <span class="badge-title">Medios de pago y envíos</span>
+                <div class="badge-row">
+                    <img src="visa@2x.png" alt="Visa">
+                    <img src="mastercard@2x.png" alt="Mastercard">
+                    <img src="amex@2x.png" alt="American Express">
+                    <img src="cabal@2x.png" alt="Cabal">
+                    <img src="diners@2x.png" alt="Diners Club">
+                    <img src="tarjeta-naranja@2x.png" alt="Naranja">
+                    <img src="17997@2x.png" alt="Andreani">
+                </div>
             </div>
 
         </div>
