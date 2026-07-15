@@ -19,6 +19,7 @@
             --accent-hover: #2b3a31;
             --font-sans: 'Inter', sans-serif;
             --font-serif: 'Playfair Display', serif;
+            --promo-color: #c49a3f; /* Color mostaza de la barra de anuncios */
         }
 
         * {
@@ -36,6 +37,22 @@
             overflow-x: hidden;
         }
 
+        /* --- BARRA DE ANUNCIOS SUPERIOR --- */
+        .announcement-bar {
+            background-color: var(--promo-color);
+            color: #ffffff;
+            text-align: center;
+            padding: 8px 15px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 105;
+            letter-spacing: 0.5px;
+        }
+
         /* --- HEADER / NAVEGACIÓN --- */
         header {
             display: flex;
@@ -46,7 +63,7 @@
             backdrop-filter: blur(5px);
             position: fixed;
             width: 100%;
-            top: 0;
+            top: 36px;
             left: 0;
             z-index: 100;
             border-bottom: 1px solid rgba(0,0,0,0.03);
@@ -83,7 +100,7 @@
             position: relative;
             width: 100%;
             height: 75vh;
-            margin-top: 80px;
+            margin-top: 116px;
             overflow: hidden;
             background-color: #eae7e2;
         }
@@ -394,13 +411,12 @@
             outline: none;
         }
 
-        /* Ocultar la flecha por defecto de details en Safari/Chrome */
         .faq-item summary::-webkit-details-marker {
             display: none;
         }
 
         .faq-item summary::after {
-            content: '\2304'; /* Icono de flecha hacia abajo */
+            content: '\2304'; 
             font-size: 1.5rem;
             font-weight: 400;
             color: var(--accent-color);
@@ -671,7 +687,7 @@
         @media (max-width: 968px) {
             header { padding: 15px 5%; }
             nav { display: none; }
-            .slider-container { height: 85vh; }
+            .slider-container { height: 85vh; margin-top: 105px; }
             .slide { padding: 40px 5%; flex-direction: column; text-align: center; justify-content: flex-start; }
             .slide-title { font-size: 2.2rem; }
             .slide-content { margin-top: 20px; }
@@ -709,8 +725,13 @@
     <noscript><img height="1" width="1" style="display:none"
     src="https://www.facebook.com/tr?id=1317912230324802&ev=PageView&noscript=1"
     /></noscript>
-    </head>
+</head>
 <body>
+
+    <!-- BARRA DE ANUNCIOS SUPERIOR -->
+    <div class="announcement-bar">
+        Envío gratis a partir de AR$ 70000
+    </div>
 
     <header>
         <div class="logo">
@@ -805,6 +826,19 @@
                     <h3 class="product-name">Potasio Natier</h3>
                     <p class="product-desc">Mineral esencial de fórmula limpia ideal para prevenir calambres, reducir fatiga y regular la presión arterial de forma segura.</p>
                     <p style="font-family: var(--font-sans); font-size: 1.25rem; font-weight: 600; color: var(--text-main); margin-top: 15px;">$18.000</p>
+                </div>
+                <button class="btn-secondary">Saber más y comprar</button>
+            </div>
+
+            <div class="product-card" onclick="openModal('aloevera')">
+                <div>
+                    <span class="product-tag">Prebiótico • Apto Vegano</span>
+                    <div class="product-image-wrapper">
+                        <img src="ALOEVERA DIGESTIVO.webp" alt="Aloe Vera Sistema Digestivo Natier">
+                    </div>
+                    <h3 class="product-name">Aloe Vera Digestivo</h3>
+                    <p class="product-desc">Excelente tónico digestivo con aloe, manzanilla y menta. Actúa eliminando toxinas, aumentando defensas y desinflamando.</p>
+                    <p style="font-family: var(--font-sans); font-size: 1.25rem; font-weight: 600; color: var(--text-main); margin-top: 15px;">$14.400</p>
                 </div>
                 <button class="btn-secondary">Saber más y comprar</button>
             </div>
@@ -1006,6 +1040,38 @@
             </div>
         </div>
 
+        <div class="modal-container" id="modal-aloevera">
+            <button class="modal-close-btn" onclick="forceClose()">&times;</button>
+            <div class="modal-content-layout">
+                <div class="modal-img-wrapper">
+                    <img src="ALOEVERA DIGESTIVO.webp" alt="Aloe Vera Sistema Digestivo Natier">
+                </div>
+                <div class="modal-info">
+                    <span class="product-tag">Prebiótico • Apto Vegano • Sin TACC</span>
+                    <h3>Aloe Vera Digestivo</h3>
+                    <p class="product-desc"><strong>Tónico digestivo y depurativo natural.</strong> La combinación de jugo natural de Aloe Vera con activos vegetales, minerales y aminoácidos promueve un estado saludable para tu organismo.</p>
+                    
+                    <p style="font-weight: 500; margin-top: 10px;">Beneficios principales:</p>
+                    <ul class="info-list">
+                        <li><strong>Gran Tónico Digestivo:</strong> Aporta minerales, vitaminas y aminoácidos esenciales para la salud.</li>
+                        <li><strong>Fórmula Súper Completa:</strong> Contiene Aloe Vera, manzanilla, menta, carqueja, melisa, boldo y alcachofa.</li>
+                        <li><strong>Efecto Antiinflamatorio:</strong> Actúa como coadyuvante en casos de inflamación del tracto gastrointestinal.</li>
+                        <li><strong>Depurativo y Colagogo:</strong> Elimina toxinas, aumenta las defensas y facilita la expulsión de bilis retenida en la vesícula.</li>
+                    </ul>
+
+                    <p class="product-desc" style="font-size: 0.9rem;"><strong>Modo de uso:</strong> Ingerir 1 a 2 tomas diarias. Puede consumirse puro o diluido en agua o jugo natural.</p>
+
+                    <p class="product-desc" style="font-size: 0.75rem; text-transform: uppercase; color: var(--text-muted); margin-top: 10px;">250 cm³ • Suplemento Dietario Libre de Gluten • Industria Argentina</p>
+                    <div class="price">$14.400</div>
+                    
+                    <div style="display: flex; flex-direction: column; gap: 10px; margin-top: 15px;">
+                        <a href="https://mpago.la/1ktWvG4" class="btn-primary" style="text-align: center; background-color: #009EE3; box-shadow: 0 4px 15px rgba(0, 158, 227, 0.2);" target="_blank">Comprar con Mercado Pago</a>
+                        <a href="https://wa.me/5491137752826?text=Hola!%20Me%20interesa%20comprar%20el%20Aloe%20Vera%20Sistema%20Digestivo%20Natier%20a%20$14.400." class="btn-secondary" style="margin-top: 0;" target="_blank">Consultar por WhatsApp</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
 
     <a href="https://wa.me/5491137752826?text=Hola!%20Quiero%20hacer una consulta general." class="whatsapp-float" target="_blank">
@@ -1078,7 +1144,7 @@
             const urlParams = new URLSearchParams(window.location.search);
             const producto = urlParams.get('prod');
             
-            if(producto === 'magnesio' || producto === 'curcuma' || producto === 'potasio') {
+            if(producto === 'magnesio' || producto === 'curcuma' || producto === 'potasio' || producto === 'aloevera') {
                 // Abrir el popup correspondiente al producto
                 openModal(producto);
             }
